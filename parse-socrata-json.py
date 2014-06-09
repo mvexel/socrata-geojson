@@ -32,7 +32,7 @@ for row in rows:
         continue
     l = row.pop('location')
     p = Point((float(l['longitude']), float(l['latitude'])))
-    result.append(Feature(geometry=p, attributes=row))
+    result.append(Feature(geometry=p, properties=row))
     good += 1
 with open(outfile, 'w') as f:
     print(FeatureCollection(result), file=f)
